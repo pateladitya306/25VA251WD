@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<script>
+let myPromise = new Promise(function(resolve, reject) {
+    let age = 25;
+
+    if (age >= 18) {
+        resolve("valid age");
+    } else {
+        reject("wait for next year");
+    }
+});
+
+myPromise
+    .then(result => console.log(result))
+    .catch(error => console.log(error))
+    .finally(() => console.log("done"));
+
+    // async await.. and fetchig API using try catch
+    // async and await are special JAvascript keywords introduced in ES2817 (ECMAScript 8) that provide a cleaner,more synchronus-looking way to work with promises
+
+    async function userdata(){
+        try{
+        let response=await fetch('https://dummyjson.com/products');
+        let responeData=await response.json();
+        console.log(responseData);
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+let num=[3,4,5,6.7];
+let square=num.map(n=n*2);
+console.log(square);
+
+//reduce:-The reduce function accumulates array elements into a single value based on a callback function.
+let sum=num.reduce((total,n)=>total+n);
+console.log(sum);
+
+   // for each
+   // The for each function executes a provided function once for each array element.
+   num.forEach((n)=>console.log(n**2));
+
+    </script>
+</body>
+</html>
